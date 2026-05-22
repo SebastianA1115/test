@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FriendSync - Beta Schedule Matcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FriendSync 📅</h1>
+        </header>
+
+        <section id="auth-screen" class="view-section">
+            <h2>Secure Server Access</h2>
+            
+            <div id="create-room-box" class="box">
+                <h3>Create a New Server</h3>
+                <div class="form-group">
+                    <input type="text" id="new-room-name" placeholder="Group/Server Name (e.g., College Crew)">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="new-room-pass" placeholder="Set Server Passcode">
+                </div>
+                <button id="btn-create-room">Create Room Dashboard</button>
+            </div>
+            
+            <div class="divider">OR</div>
+
+            <div id="join-room-box" class="box">
+                <h3>Join Existing Server</h3>
+                <div class="form-group">
+                    <input type="text" id="join-room-id" placeholder="Server ID (e.g., local_test)">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="join-room-pass" placeholder="Enter Server Passcode">
+                </div>
+                <button id="btn-join-room">Join Server</button>
+            </div>
+
+            <div class="divider">OR</div>
+
+            <div class="box test-box">
+                <h3>Developer Testing Mode</h3>
+                <p style="margin-top: 0; margin-bottom: 15px;">Loads a demo server. Testing mode maps your local user profile name to "Alice".</p>
+                <button id="btn-test-room">🚀 Launch Test Server</button>
+            </div>
+        </section>
+
+        <section id="main-dashboard" class="view-section hidden">
+            <div class="share-box">
+                <h3>🔒 Secure Server: <span id="display-room-name">---</span></h3>
+                <p>Share this unique link with your friends:</p>
+                <input type="text" id="share-link-input" readonly onclick="this.select()">
+                <small style="color: #555; display: block; margin-top: 4px;">They will still need your passcode to enter!</small>
+            </div>
+
+            <div id="identity-banner" class="user-identity-bar hidden">
+                <span>Logged in locally as: <strong id="identity-display">---</strong></span>
+                <button id="btn-change-identity">Clear Saved Name</button>
+            </div>
+            
+            <div class="grid-layout">
+                <div class="input-section">
+                    <h2 id="form-title">Add Your Availability</h2>
+                    <form id="schedule-form">
+                        <input type="hidden" id="edit-id">
+                        
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="date" id="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="status" required>
+                                <option value="Free">Completely Free</option>
+                                <option value="Working">Working (Custom Shift)</option>
+                                <option value="Half-Day">Half-Day (Available later)</option>
+                                <option value="Event">Event (Church, Sports, etc.)</option>
+                            </select>
+                        </div>
+
+                        <div id="time-inputs" class="form-group hidden">
+                            <label class="section-label">Shift Times:</label>
+                            <div class="time-row">
+                                <input type="time" id="clock-in">
+                                <span>to</span>
+                                <input type="time" id="clock-out">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="event-details" placeholder="Details / Event Name (optional)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="section-label">Repeat Schedule on these days:</label>
+                            <div class="days-checklist">
+                                <label><input type="checkbox" name="repeat-days" value="1"> Mon</label>
+                                <label><input type="checkbox" name="repeat-days" value="2"> Tue</label>
+                                <label><input type="checkbox" name="repeat-days" value="3"> Wed</label>
+                                <label><input type="checkbox" name="repeat-days" value="4"> Thu</label>
+                                <label><input type="checkbox" name="repeat-days" value="5"> Fri</label>
+                                <label><input type="checkbox" name="repeat-days" value="6"> Sat</label>
+                                <label><input type="checkbox" name="repeat-days" value="0"> Sun</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="submit-btn">Add to Calendar</button>
+                        <button type="button" id="cancel-edit-btn" class="btn-secondary hidden">Cancel Edit</button>
+                    </form>
+                </div>
+
+                <div class="results-section">
+                    <h2>Everyone's Schedule</h2>
+                    <div id="schedule-list"></div>
+                    
+                    <button id="find-hangout" class="highlight-btn">Find Hangout Days</button>
+                    <div id="hangout-results"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

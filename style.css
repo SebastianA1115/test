@@ -1,0 +1,169 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-top: 0;
+}
+
+.box {
+    background: #f8f9fa;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.box h3 { margin-top: 0; margin-bottom: 15px; font-size: 18px; }
+.divider { text-align: center; margin: 20px 0; font-weight: bold; color: #777; }
+.test-box { background-color: #e8f5e9; border-color: #a5d6a7; }
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .grid-layout { grid-template-columns: 1fr; }
+}
+
+.share-box {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #bbdefb;
+    margin-bottom: 20px;
+}
+
+#share-link-input {
+    width: 100%;
+    padding: 8px;
+    background: white;
+    font-weight: bold;
+    color: #0056b3;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #90caf9;
+    border-radius: 4px;
+}
+
+.user-identity-bar {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-identity-bar button {
+    width: auto;
+    padding: 4px 8px;
+    font-size: 12px;
+    background-color: #dc3545;
+}
+
+.user-identity-bar button:hover {
+    background-color: #bd2130;
+}
+
+.form-group { margin-bottom: 15px; }
+input[type="text"], input[type="password"], input[type="date"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.time-row { display: flex; align-items: center; gap: 10px; margin-top: 5px; }
+.time-row input { padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
+
+.section-label { font-size: 14px; font-weight: bold; display: block; margin-bottom: 5px; }
+.days-checklist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+.days-checklist label { display: flex; align-items: center; gap: 4px; font-size: 13px; cursor: pointer; }
+
+button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+button:hover { background-color: #1557b0; }
+
+.btn-secondary { background-color: #6c757d; margin-top: 5px; }
+.btn-secondary:hover { background-color: #5a6268; }
+
+.highlight-btn { background-color: #34a853; font-size: 16px; margin-top: 15px; }
+.highlight-btn:hover { background-color: #2b8a43; }
+
+#schedule-list { max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+.entry {
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 5px solid #ccc;
+    background: #fdfdfd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.entry.Free { border-left-color: #2ecc71; background-color: #ebfaf0; }
+.entry.Working { border-left-color: #e74c3c; background-color: #fdedec; }
+.entry.Half-Day { border-left-color: #f1c40f; background-color: #fef9e7; }
+.entry.Event { border-left-color: #9b59b6; background-color: #f5eef8; }
+
+.entry-actions { display: flex; gap: 8px; margin-top: 8px; }
+.entry-actions button { width: auto; padding: 4px 12px; font-size: 12px; }
+.btn-edit { background-color: #f39c12; }
+.btn-edit:hover { background-color: #d3830e; }
+.btn-delete { background-color: #e74c3c; }
+.btn-delete:hover { background-color: #c0392b; }
+
+.entry.read-only { opacity: 0.85; }
+
+#hangout-results {
+    margin-top: 15px;
+    padding: 15px;
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 6px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.hidden { display: none !important; }
