@@ -15,6 +15,11 @@
         <section id="auth-screen" class="view-section">
             <h2>Secure Server Access</h2>
             
+            <div id="saved-servers-box" class="box hidden">
+                <h3>Your Servers</h3>
+                <div id="saved-servers-list" class="server-grid"></div>
+            </div>
+
             <div id="create-room-box" class="box">
                 <h3>Create a New Server</h3>
                 <div class="form-group">
@@ -49,6 +54,11 @@
         </section>
 
         <section id="main-dashboard" class="view-section hidden">
+            <div class="dashboard-nav">
+                <button id="btn-back-to-main" class="btn-nav">⬅ Back to Server List</button>
+                <button id="btn-switch-server" class="btn-nav btn-alt">🔁 Quick Switch Server</button>
+            </div>
+
             <div class="share-box">
                 <h3>🔒 Secure Server: <span id="display-room-name">---</span></h3>
                 <p>Share this unique link with your friends:</p>
@@ -64,6 +74,7 @@
             <div class="grid-layout">
                 <div class="input-section">
                     <h2 id="form-title">Add Your Availability</h2>
+                    <p class="helper-text">Your schedule applies to any server you join under this profile name.</p>
                     <form id="schedule-form">
                         <input type="hidden" id="edit-id">
                         
